@@ -26,7 +26,35 @@ User can still interact with app
 
 ---
 
-## 📊 How Thread Works
+## � Project Folder Structure
+
+```
+app/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── example/
+│       │           └── f257_a/
+│       │               └── MainActivity5.java    ← Thread + Handler Activity
+│       │
+│       ├── res/
+│       │   └── layout/
+│       │       └── activity_main5.xml           ← Layout for countdown
+│       │
+│       └── AndroidManifest.xml                  ← Declare activity here
+│
+└── build.gradle                                  ← Dependencies
+```
+
+**Files you need to create:**
+1. `MainActivity5.java` - Activity with Thread + Handler
+2. `activity_main5.xml` - Layout with TextView for countdown
+3. Update `AndroidManifest.xml` - Add activity declaration
+
+---
+
+## �📊 How Thread Works
 
 ```
 ┌────────────────────────────────────────────────────────┐

@@ -1144,24 +1144,46 @@ bindService() → onCreate() → onBind() → onServiceConnected()
 ### Complete File Organization
 
 ```
-com.example.f257_a/
+app/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── example/
+│       │           └── f257_a/
+│       │               ├── MainActivity2.java          ← Navigation menu (ListView)
+│       │               ├── MainActivity5.java          ← Thread + Handler demo
+│       │               ├── MainActivity6.java          ← Services control demo
+│       │               ├── MusicService.java           ← Unbound service
+│       │               ├── MybindService.java          ← Bound service
+│       │               └── DataSyncService.java        ← Periodic sync service
+│       │
+│       ├── res/
+│       │   └── layout/
+│       │       ├── activity_main2.xml                 ← Navigation ListView
+│       │       ├── activity_main5.xml                 ← Countdown display
+│       │       └── activity_main6.xml                 ← Service control buttons
+│       │
+│       └── AndroidManifest.xml                        ← Declare all activities & services
 │
-├── activities/
-│   ├── MainActivity2.java          ← Navigation menu (ListView)
-│   ├── MainActivity5.java          ← Thread + Handler demo
-│   └── MainActivity6.java          ← Services demo
-│
-├── services/
-│   ├── MusicService.java           ← Unbound service
-│   ├── MybindService.java          ← Bound service
-│   └── DataSyncService.java        ← Periodic sync service
-│
-└── res/
-    └── layout/
-        ├── activity_main2.xml      ← Navigation ListView
-        ├── activity_main5.xml      ← Countdown display
-        └── activity_main6.xml      ← Service control buttons
+└── build.gradle                                        ← Dependencies
 ```
+
+### Files Breakdown
+
+**Activities (3 files):**
+1. `MainActivity2.java` + `activity_main2.xml` - Navigation menu
+2. `MainActivity5.java` + `activity_main5.xml` - Thread countdown demo
+3. `MainActivity6.java` + `activity_main6.xml` - Services control buttons
+
+**Services (3 files):**
+1. `MusicService.java` - Unbound service (background music)
+2. `MybindService.java` - Bound service (controlled music)
+3. `DataSyncService.java` - Service + Handler (periodic sync)
+
+**Configuration:**
+1. `AndroidManifest.xml` - **MUST** declare all 3 activities + 3 services
+2. `build.gradle` - Add required dependencies
 
 ---
 

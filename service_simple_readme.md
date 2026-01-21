@@ -35,6 +35,36 @@ User can use WhatsApp, Chrome, etc. while music plays!
 
 ---
 
+## 📁 Project Folder Structure
+
+```
+app/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── example/
+│       │           └── f257_a/
+│       │               ├── MainActivity6.java       ← Control Activity (buttons)
+│       │               └── MusicService.java        ← Unbound Service
+│       │
+│       ├── res/
+│       │   └── layout/
+│       │       └── activity_main6.xml              ← Layout with Play/Stop buttons
+│       │
+│       └── AndroidManifest.xml                     ← Declare activity & service
+│
+└── build.gradle                                     ← Dependencies
+```
+
+**Files you need to create:**
+1. `MusicService.java` - Service that plays music
+2. `MainActivity6.java` - Activity with Play/Stop buttons
+3. `activity_main6.xml` - Layout with 2 buttons
+4. Update `AndroidManifest.xml` - **MUST** declare service + activity
+
+---
+
 ## 🎵 Two Types of Services
 
 ### 1. Unbound Service (Simple - Fire & Forget)
